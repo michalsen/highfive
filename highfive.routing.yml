@@ -1,0 +1,47 @@
+# In order to to create pages it is necessary to define routes for them. A route
+# maps a URL path to a controller. It defines with what function or method will
+# be called when a URL is accessed.
+
+# Menu items corresponding to these URLs are defined separately in the
+# highfive.menu_links.yml file.
+
+# If the user accesses http://example.com/?q=highfive , the routing
+# system will look for a route with that path. In this case it will find a
+# match, and execute the _controller callback. In this case the callback is
+# defined as a classname
+# ("\Drupal\highfive\Controller\HighFiveController") and a method
+# ("tutorial").
+
+# Notice that the user must have the permission we defined in highfive.permissions.yml
+# with the machine name of 'access highfive demo'.
+
+highfive_demo_route:
+  path: 'highfive/demo'
+  defaults:
+    _controller: '\Drupal\highfive\Controller\HighFiveController::tutorial'
+    _title: 'High Five Demonstration'
+  requirements:
+    _permission: 'access highfive demo'
+
+# TODO: 1) Create a route for a page 'High Five Definition' with the path of 'highfive/about'
+#          and permission of 'access highfive about'
+highfive_about_route:
+  path: 'highfive/about'
+  defaults:
+    _controller: '\Drupal\highfive\Controller\HighFiveController::about'
+    _title: 'About High Fives'
+  requirements:
+    _permission: 'access about page'
+
+# TODO: 2) Create a route with arguments {first} and {second} which utilizes a page callback
+#          which displays a simple message saying "{first} and {second} gave each other a high five!"
+#          - Use the path of "highfive/{first}/{second}"
+#          - Use permission of 'give highfives', which needs to be defined in highfive.permissions.yml
+#          - See page_example.routing.yml of the Examples module for more details of dynamic routes.
+highfive_give_highfives:
+  path: 'highfive/{first}/{second}'
+  defaults:
+    _controller: '\Drupal\highfive\Controller\HighFiveController::performHighFive'
+    _title: 'Dynamic High Fives'
+  requirements:
+    _permission: 'access  performHighFive page'

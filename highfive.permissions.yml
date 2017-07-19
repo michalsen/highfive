@@ -1,0 +1,31 @@
+# Since the access to our High Five custom pages is granted based on custom
+# permissions, we need to define those permissions here. Defining permissions here ensures
+# that they are available to enable on the permissions administration pages.
+#
+# For more info see: https://www.drupal.org/node/2311427
+# and https://www.aram.cz/article/custom-permissions-drupal-8
+#
+# Tasks:
+#   1) Create 'access highfive about' permission.
+#        - This allows users to access the "About High Fives" page.
+#
+#   2) Create 'give highfives' permission.
+#        - This allows users to specify two names to give each other a high five.
+#
+# Hint:
+#  Copy the 'access highfive tutorial' permission (including title and description),
+#  then paste and modify as needed.
+
+'access highfive demo':
+  title: Access high five demonstration
+  description: Allow users to access the high five tutorial
+
+# TODO: 1) Create 'access highfive about' permission.
+'access highfive about':
+  title: Access high five dictionary definition
+  description:  Allow users to access the definition of high five.
+
+# TODO: 2) Create 'give highfives' permission.
+'give highfives':
+  title: Give High Fives
+  description:  Allow users to give high fives between two URL arguments.

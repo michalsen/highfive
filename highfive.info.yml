@@ -1,0 +1,4 @@
+name: HighFive
+type: module
+description: 'A module for learning D8 module development which gives high fives along the way!'
+core: 8.x
